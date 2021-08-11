@@ -1,0 +1,8 @@
+apiVersion: v2
+appVersion: 0.0.1
+description: Chart for my app
+maintainers:
+- email: eliom@jfrog.com
+  name: Elio Marcolino
+name: app
+version: 0.0.1

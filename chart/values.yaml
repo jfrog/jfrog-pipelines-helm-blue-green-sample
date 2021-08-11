@@ -1,0 +1,41 @@
+image:
+  registry: docker.jfrog.io
+  repository: app
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+
+replicaCount: 1
+
+containerPort: 8080
+containerPortHttps: 8443
+
+livenessProbe:
+  initialDelaySeconds: 0
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
+  path: /ping
+
+readinessProbe:
+  initialDelaySeconds: 0
+  timeoutSeconds: 5
+  periodSeconds: 10
+  failureThreshold: 10
+  successThreshold: 1
+  path: /ping
+
+startupProbe:
+  initialDelaySeconds: 20
+  failureThreshold: 60
+  periodSeconds: 5
+  timeoutSeconds: 5
+  path: /ping
+
+service:
+  type: LoadBalancer
+  port: 80
+  portHttps: 443
+  nodePort: ""
+  nodePortHttps: ""
+  externalTrafficPolicy: Cluster
