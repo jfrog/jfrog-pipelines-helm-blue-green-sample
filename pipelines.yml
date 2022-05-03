@@ -23,7 +23,7 @@ resources:
     type: HelmChart
     configuration:
       sourceArtifactory: {{ .Values.appChart.sourceArtifactory }}
-      repository: helm
+      repository: cst-helm
       chart: app
       version: 0.0.0
 
