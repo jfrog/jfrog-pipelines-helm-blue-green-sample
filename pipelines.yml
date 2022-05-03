@@ -10,7 +10,7 @@ resources:
       branches:
         include: {{ .Values.gitRepo.branch }}
 
-  - name: app_image
+  - name: app_image_name
     type: Image
     configuration:
       registry: {{ .Values.appImage.registry }}
@@ -54,7 +54,7 @@ pipelines:
           inputSteps:
             - name: docker_build
           outputResources:
-            - name: app_image
+            - name: app_image_name
 
       - name: helm_publish
         type: HelmPublish
