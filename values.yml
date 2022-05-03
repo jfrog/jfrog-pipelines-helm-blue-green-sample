@@ -6,6 +6,7 @@ gitRepo:
 appImage:
   registry: entArt
   registryUrl: demo.jfrog-pipelines.com/cst-docker
+  repoName: cst-docker
 
 appChart:
   sourceArtifactory: entArt                   # <-- replace with your Artifactory integration name
