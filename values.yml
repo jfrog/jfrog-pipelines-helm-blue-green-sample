@@ -8,7 +8,7 @@ appImage:
   registryUrl: https://demo.jfrog-pipelines.com/cst-docker
 
 appChart:
-  sourceArtifactory: enArt                   # <-- replace with your Artifactory integration name
+  sourceArtifactory: entArt                   # <-- replace with your Artifactory integration name
 
 runtime:
   k8s_integration: coresvc_k8s                             # <-- replace with your Kubernetes integration name
