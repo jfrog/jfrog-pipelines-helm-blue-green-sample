@@ -1,6 +1,6 @@
 gitRepo:
   gitProvider: githubInt                              # <-- replace with your GitRepo integration name
-  path: stein321/jfrog-pipelines-helm-blue-green-sample  # <-- replace jfrog with your username or org name
+  path: jfrog/jfrog-pipelines-helm-blue-green-sample  # <-- replace jfrog with your username or org name
   branch: main
 
 appImage:
