@@ -6,7 +6,7 @@ image:
 
 replicaCount: 1
 
-containerPort: 8080
+containerPort: 80
 containerPortHttps: 8443
 
 livenessProbe:
