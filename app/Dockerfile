@@ -1,5 +1,5 @@
 # Builder image
-FROM golang:1.15.5-alpine
+FROM golang:1.18-alpine
 
 # Set workspace
 WORKDIR /app
