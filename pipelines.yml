@@ -73,7 +73,7 @@ pipelines:
             - name: app_chart
         execution:
           onStart:
-            - CHART_VERSION=0.0.$res_app_image_name_imageTag
+            - CHART_VERSION=$res_app_image_name_imageTag
             - pushd $res_app_gitrepo_resourcePath/chart
             - "sed -ie \"s/^version: .*$/version: $CHART_VERSION/\" Chart.yaml"
             - "sed -ie \"s/^appVersion: .*$/appVersion: $CHART_VERSION/\" Chart.yaml"
