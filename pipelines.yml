@@ -17,6 +17,7 @@ resources:
       sourceRepository: docker
       imageName: {{ .Values.appImage.registryUrl }}/docker/app
       imageTag: latest
+      autoPull: false
 
   - name: app_chart
     type: HelmChart
