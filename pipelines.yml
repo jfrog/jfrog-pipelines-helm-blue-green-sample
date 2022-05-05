@@ -28,7 +28,7 @@ resources:
       version: 0.0.0
 
 pipelines:
-  - name: helm_blue_green_pipeline
+  - name: docker_ci_pipeline
     steps:
       - name: docker_build
         type: DockerBuild
@@ -56,6 +56,8 @@ pipelines:
           outputResources:
             - name: app_image_name
 
+  - name: helm_blue_green_pipeline
+    steps:
       - name: helm_publish
         type: HelmPublish
         configuration:
@@ -63,16 +65,15 @@ pipelines:
           chartPath: "./chart"
           lint: true
           autoPublishBuildInfo: false
-          inputSteps:
-            - name: docker_push
           inputResources:
+            - name: app_image_name
             - name: app_gitrepo
               trigger: false
           outputResources:
             - name: app_chart
         execution:
           onStart:
-            - CHART_VERSION=0.0.$run_number
+            - CHART_VERSION=0.0.$res_app_image_name_imageTag
             - pushd $res_app_gitrepo_resourcePath/chart
             - "sed -ie \"s/^version: .*$/version: $CHART_VERSION/\" Chart.yaml"
             - "sed -ie \"s/^appVersion: .*$/appVersion: $CHART_VERSION/\" Chart.yaml"
