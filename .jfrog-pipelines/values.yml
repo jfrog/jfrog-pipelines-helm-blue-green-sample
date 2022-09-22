@@ -1,0 +1,21 @@
+gitRepo:
+  gitProvider: my_github                              # <-- replace with your GitRepo integration name
+  path: jfrog/jfrog-pipelines-helm-blue-green-sample  # <-- replace jfrog with your username or org name
+  branch: main
+
+appImage:
+  registry: my_artifactory                            # <-- replace with your Artifactory integration name
+  registryUrl: myartifactory.myorg.com                # <-- replace with the url to your Artifactory environment
+
+appChart:
+  sourceArtifactory: my_artifactory                   # <-- replace with your Artifactory integration name
+
+runtime:
+  k8s_integration: my_k8s                             # <-- replace with your Kubernetes integration name
+  namespace: namespace                                # <-- replace with the name of the Kubernetes namespace where the Helm chart will be deployed
+  blueReleaseName: app-blue
+  greenReleaseName: app-green
+  idleServiceName: app-idle
+  liveServiceName: app
+
+
