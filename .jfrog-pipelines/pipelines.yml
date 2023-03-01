@@ -28,7 +28,7 @@ resources:
       version: 0.0.0
 
 pipelines:
-  - name: helm_blue_green_pipeline
+  - name: Helm_Blue_Green_Quickstart
     steps:
       - name: docker_build
         type: DockerBuild
