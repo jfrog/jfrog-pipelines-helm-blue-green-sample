@@ -14,8 +14,8 @@ resources:
     type: Image
     configuration:
       registry: {{ .Values.appImage.registry }}
-      sourceRepository: docker
-      imageName: {{ .Values.appImage.registryUrl }}/docker/app
+      sourceRepository: quickstarts-docker-local
+      imageName: {{ .Values.appImage.registryUrl }}/quickstarts-docker-local/app
       imageTag: latest
       autoPull: true
 
@@ -36,7 +36,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: app
           dockerFileName: Dockerfile
-          dockerImageName: {{ .Values.appImage.registryUrl }}/docker/app
+          dockerImageName: {{ .Values.appImage.registryUrl }}/quickstarts-docker-local/app
           dockerImageTag: 0.0.${run_number}
           integrations:
             - name: {{ .Values.appImage.registry }}
@@ -84,9 +84,9 @@ pipelines:
           helmVersion: 3
           namespace: {{ .Values.runtime.namespace }}
           blueReleaseName: {{ .Values.runtime.blueReleaseName }}
-          blueFlags: "--set image.registry='{{ .Values.appImage.registryUrl }}/docker'"
+          blueFlags: "--set image.registry='{{ .Values.appImage.registryUrl }}/quickstarts-docker-local'"
           greenReleaseName: {{ .Values.runtime.greenReleaseName }}
-          greenFlags: "--set image.registry='{{ .Values.appImage.registryUrl }}/docker'"
+          greenFlags: "--set image.registry='{{ .Values.appImage.registryUrl }}/quickstarts-docker-local'"
           roleServices:
             - blueReferenceName: {{ .Values.runtime.blueReleaseName }}-app
               greenReferenceName: {{ .Values.runtime.greenReleaseName }}-app
