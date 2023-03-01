@@ -48,7 +48,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: docker-local
+          targetRepository: quickstarts-docker-local
           integrations:
             - name: {{ .Values.appImage.registry }}
           inputSteps:
