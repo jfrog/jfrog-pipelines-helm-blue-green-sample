@@ -11,7 +11,7 @@ appChart:
   sourceArtifactory: myArtifactory                   # <-- replace with your Artifactory integration name
 
 runtime:
-  k8s_integration: myKubernetes                       # <-- replace with your Kubernetes integration name
+  k8s_integration: kuberbates                       # <-- replace with your Kubernetes integration name
   namespace: pipe-master-pool                                # <-- replace with the name of the Kubernetes namespace where the Helm chart will be deployed
   blueReleaseName: app-blue
   greenReleaseName: app-green
