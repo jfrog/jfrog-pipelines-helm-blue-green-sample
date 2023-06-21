@@ -40,8 +40,7 @@ pipelines:
           dockerImageName: {{ .Values.appImage.registryUrl }}/quickstarts-docker-local/app
           dockerImageTag: 0.0.${run_number}
           integrations:
-            #- name: {{ .Values.appImage.registry }}
-            - name: myKubernetes
+            - name: {{ .Values.appImage.registry }}
           inputResources:
             - name: app_gitrepo
               trigger: false
@@ -95,7 +94,8 @@ pipelines:
               idleName: {{ .Values.runtime.idleServiceName }}
               liveName: {{ .Values.runtime.liveServiceName }}
           integrations:
-            - name: {{ .Values.runtime.k8s_integration }}
+            #- name: {{ .Values.runtime.k8s_integration }}
+            - name: myKubernetes
           inputResources:
             - name: app_chart
 
