@@ -33,7 +33,7 @@ pipelines:
       - name: docker_build
         type: DockerBuild
         configuration:
-          nodepool: myNodePool
+          nodePool: myNodePool
           affinityGroup: dbp_group
           dockerFileLocation: app
           dockerFileName: Dockerfile
