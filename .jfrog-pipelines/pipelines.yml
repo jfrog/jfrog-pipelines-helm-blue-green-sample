@@ -122,6 +122,9 @@ pipelines:
       - name: namespace_cleanup
         type: Bash
         configuration:
+          integrations:
+            #- name: {{ .Values.runtime.k8s_integration }}
+            - name: myKubernetes        
           inputSteps:
             - name: helm_blue_green_cleanup         
         execution:
