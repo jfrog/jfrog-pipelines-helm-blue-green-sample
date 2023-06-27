@@ -119,3 +119,9 @@ pipelines:
           inputSteps:
             - name: helm_blue_green_role_switch
 
+      - name: namespace_cleanup
+        type: Bash
+        execution:
+          onExecute:
+            - sleep 1m
+            - helm3 delete -n pipelines-demo app-blue
