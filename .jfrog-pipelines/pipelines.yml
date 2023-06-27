@@ -121,6 +121,9 @@ pipelines:
 
       - name: namespace_cleanup
         type: Bash
+        configuration:
+          inputSteps:
+            - name: helm_blue_green_cleanup         
         execution:
           onExecute:
             - sleep 1m
