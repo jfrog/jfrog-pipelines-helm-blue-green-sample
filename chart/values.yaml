@@ -32,10 +32,10 @@ startupProbe:
   timeoutSeconds: 5
   path: /ping
 
-service:
-  type: LoadBalancer
-  port: 80
-  portHttps: 443
-  nodePort: ""
-  nodePortHttps: ""
-  externalTrafficPolicy: Cluster
+#service:
+  #type: LoadBalancer
+  #port: 80
+  #portHttps: 443
+  #nodePort: ""
+  #nodePortHttps: ""
+  #externalTrafficPolicy: Cluster
